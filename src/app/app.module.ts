@@ -14,6 +14,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MenuComponent } from './menu/menu.component';
 import { AppComponent } from './app.component';
@@ -23,11 +26,11 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponentComponent } from './login-component/login-component.component';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
-import { LoginComponentComponent } from './login-component/login-component.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,7 @@ import { LoginComponentComponent } from './login-component/login-component.compo
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,10 @@ import { LoginComponentComponent } from './login-component/login-component.compo
     MatCardModule,
     AppRoutingModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     LoginComponentComponent
