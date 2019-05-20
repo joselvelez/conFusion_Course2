@@ -10,7 +10,7 @@
     <mat-card rowHeight="200px" *ngIf="paramDish">
       <mat-card-header>
         <mat-card-title>
-          <h3>{{paramDish.name | uppercase}}</h3>
+          <h3 *ngIf="paramDish">{{paramDish.name | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
       <img mat-card-image src={{paramDish.image}}>

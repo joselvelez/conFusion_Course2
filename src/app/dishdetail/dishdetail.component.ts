@@ -14,13 +14,18 @@ export class DishdetailComponent implements OnInit {
 
   paramDish: Dish;
 
-  constructor( private dishservice: DishService,
+  constructor(
+    private dishservice: DishService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location
+    ) { }
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
-    this.paramDish = this.dishservice.getDish(id);
+    const id = +this.route.snapshot.params['id'];
+
+    this.dishservice.getDish(id).then(
+      promiseParamDish => this.paramDish = promiseParamDish
+    );
   }
 
   goBack(): void {
