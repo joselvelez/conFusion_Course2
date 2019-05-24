@@ -25,23 +25,11 @@ export class HomeComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-//    this.dish = this.dishservice.getFeaturedDish();
+    this.dishservice.getFeaturedDish().subscribe(featDishParam => this.dish = featDishParam);
 
-    this.dishservice.getFeaturedDish().then(
-      promiseParamFeaturedDish => this.dish = promiseParamFeaturedDish
-    );
+    this.promotionservice.getFeaturedPromotion().subscribe(featPromoParam => this.promotion = featPromoParam);
 
-//    this.promotion = this.promotionservice.getFeaturedPromotion();
-
-      this.promotionservice.getFeaturedPromotion().then(
-        promiseParamFeaturedPromotion => this.promotion = promiseParamFeaturedPromotion
-      );
-
-//    this.featuredLeader = this.leaderService.getFeaturedLeader();
-
-    this.leaderService.getFeaturedLeader().then(
-      promiseParamFeaturedLeader => this.featuredLeader = promiseParamFeaturedLeader
-    );
+    this.leaderService.getFeaturedLeader().subscribe(featLeaderParam => this.featuredLeader = featLeaderParam);
   }
 
 }
